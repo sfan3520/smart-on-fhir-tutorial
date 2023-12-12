@@ -37,9 +37,9 @@
           console.log(alg);
           var allgeries = '';
           for (let i = 0; i < alg.length; i++) {
-              var obj1 = smart.byCodes(alg[i], 'code');
-              var obj2 = smart.byCodes(obj1, 'text');
-              var allgeries += allgeries + + obj2 + "<br>";
+              var obj1 = alg[i].code.text;
+              
+              var allgeries += obj1 + "<br>";
            }
           
           var byCodes = smart.byCodes(obv, 'code');
@@ -81,6 +81,8 @@
 
           p.temp = getQuantityValueAndUnit(temp[0]);
 
+          p.allergies = allergies;
+
           ret.resolve(p);
         });
       } else {
@@ -104,7 +106,8 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      temp: {value: ''}
+      temp: {value: ''},
+      allergies: ''
     };
   }
 
@@ -149,7 +152,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
-    $('#alg').html(allergies);
+    $('#alg').html(p.allergies);
   };
 
 })(window);
