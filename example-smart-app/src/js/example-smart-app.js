@@ -39,7 +39,7 @@
           for (let i = 0; i < alg.length; i++) {
               var obj1 = alg[i].code.text;
               
-              var allgeries += obj1 + "<br>";
+              allgeries += obj1 + "<br>";
            }
           
           var byCodes = smart.byCodes(obv, 'code');
