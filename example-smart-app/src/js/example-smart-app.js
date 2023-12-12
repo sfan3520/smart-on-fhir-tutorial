@@ -35,11 +35,11 @@
         $.when(pt, obv, alg).done(function(patient, obv,alg) {
 
           console.log(alg);
-          var allgeries = '';
+          var allergies = '';
           for (let i = 0; i < alg.length; i++) {
               var obj1 = alg[i].code.text;
               
-              allgeries += obj1 + "<br>";
+              allergies += obj1 + "<br>";
            }
           
           var byCodes = smart.byCodes(obv, 'code');
