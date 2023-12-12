@@ -35,6 +35,12 @@
         $.when(pt, obv, alg).done(function(patient, obv,alg) {
 
           console.log(alg);
+          var allgeries = '';
+          for (let i = 0; i < alg.length; i++) {
+              var obj1 = smart.byCodes(alg[i], 'code');
+              var obj2 = smart.byCodes(obj1, 'text');
+              var allgeries += allgeries + + obj2 + "<br>";
+           }
           
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -143,6 +149,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
+    $('#alg').html(allergies);
   };
 
 })(window);
